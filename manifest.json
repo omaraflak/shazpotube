@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Shazpotube",
+    "description": "Music finder for YouTube",
+    "version": "1.0",
+    "action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [{
+        "matches": ["https://www.youtube.com/*", "https://youtu.be/*"],
+        "js": ["toastify.js", "contentScript.js"],
+        "css": ["toastify.css", "contentScript.css"]
+    }]
+  }
