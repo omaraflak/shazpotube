@@ -27,6 +27,11 @@ const getSongs = () => {
     return songs
 }
 
+const spotifyLink = (song) => {
+    const search = `${song.artist} ${song.title}`
+    return `https://open.spotify.com/search/${search}`
+}
+
 const getPlayer = () => {
     const p1 = document.querySelector("#player")
     const p2 = document.querySelector("#player-theater-container")
@@ -68,11 +73,11 @@ const setHooks = () => {
 
         const song = songs[time]
         if (song != null) {
-            showToast("#", song.artist, song.title)
+            showToast(spotifyLink(song), song.artist, song.title)
         }
     }
 }
 
 window.onload = () => {
-    setTimeout(setHooks, 5000)
+    setTimeout(setHooks, 7000)
 }
