@@ -28,7 +28,7 @@ const getSongs = () => {
 }
 
 const spotifyLink = (song) => {
-    const search = `${song.artist} ${song.title}`
+    const search = `${song.artist} ${song.title}`.replaceAll(" ", "%20")
     return `https://open.spotify.com/search/${search}`
 }
 
